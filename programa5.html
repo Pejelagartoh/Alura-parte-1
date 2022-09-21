@@ -1,0 +1,45 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0, 0, 600, 400);
+    var xRandom;
+    var yRandom;
+
+   function disenarCircunferencia(x, y, radio, color){
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2 * Math.PI);
+        pincel.fill();
+
+   }
+
+   function limpiarpantalla(){
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0, 0, 600, 400);
+   }
+
+
+   function crearObjetivo(){
+        limpiarpantalla();
+        xRandom = Math.random() * 600;
+        yRandom = Math.random() * 400;
+        disenarCircunferencia(xRandom, yRandom, 30, "red");
+        disenarCircunferencia(xRandom, yRandom, 20, "white");
+        disenarCircunferencia(xRandom, yRandom, 10, "red");
+   }
+   function disparar(evento){
+        var x = evento.clientX - pantalla.offsetLeft;
+        var y = evento.clientY - pantalla.offsetTop;
+        if(x > xRandom - 10 && x < xRandom + 10 && y > yRandom - 10 && y < yRandom + 10){
+            alert("Ganaste");
+        }
+
+    }
+
+    setInterval(crearObjetivo, 1000);
+    pantalla.onclick = disparar;
+
+</script>   

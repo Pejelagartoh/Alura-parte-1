@@ -1,0 +1,33 @@
+p{
+    text-align: center;
+}
+.principal{
+    background-color: #CCCCCC;
+    text-align: center;
+    padding: 20px;
+}
+h1{
+    text-align: center;
+    background-color: #CCCCCC;
+}
+
+body{
+    background-color: #CCCCCC;
+}
+em strong{
+    color: #FF0000;
+}
+.diferenciales{
+    background-color: #FFFFFF;
+    padding: 30px;
+}
+h2{
+    text-align: center;
+}
+.items{
+    font-style: italic;
+}
+ul{
+    display: inline-block;
+    vertical-align: top;
+}

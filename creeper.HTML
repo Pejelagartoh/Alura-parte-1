@@ -1,0 +1,36 @@
+<canvas width="350" height="300"></canvas>
+
+<script>
+    var  pantalla = document.querySelector("canvas");
+    var  pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "green";
+    pincel.fillRect(0, 0, 350, 300);
+
+    pincel.fillStyle = "black";
+    pincel.fillRect(50, 50, 90, 90);
+    pincel.fillRect(200, 50, 90, 90);
+    pincel.beginPath();
+    pincel.moveTo(140, 140);
+    pincel.lineTo(200, 140);
+    pincel.lineTo(200, 240);
+    pincel.lineTo(140, 240);
+    pincel.lineTo(140, 140);
+    pincel.fill();
+
+    pincel.moveTo(140, 190);
+    pincel.lineTo(100, 190);
+    pincel.lineTo(100, 300);
+    pincel.lineTo(140, 300);
+    pincel.lineTo(140, 190);
+    pincel.fill();
+
+    pincel.moveTo(200, 190);
+    pincel.lineTo(240, 190);
+    pincel.lineTo(240, 300);
+    pincel.lineTo(200, 300);
+    pincel.lineTo(200, 190);
+
+    pincel.fill();
+
+
+</script>

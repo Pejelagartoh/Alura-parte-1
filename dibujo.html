@@ -1,0 +1,58 @@
+<canvas width="1920" height="1920" id="canvas"></canvas>
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0, 0, 1920, 1920);
+
+    function dibujarY(x,y){
+        pincel.strokeStyle = "black";
+        pincel.lineWidth = 3;   
+
+        while(x<1920){
+            while(y<1000){
+                pincel.beginPath();
+                pincel.moveTo(x, y);
+                pincel.lineTo(x+10, y+10);
+                pincel.lineTo(x+10, y+30);
+                pincel.lineTo(x, y+40);
+                pincel.lineTo(x, y+60);
+                pincel.stroke();
+                y+=60;
+            }     
+        
+            x+=20;
+            y=0;
+        }
+  
+        
+    }
+
+    function dibujarX(x,y){
+        pincel.strokeStyle = "black";
+        pincel.lineWidth = 3;   
+        
+        while(y<1000){
+            while(x<1920){
+                pincel.beginPath();
+                pincel.moveTo(x, y);
+                pincel.lineTo(x+10, y+10);
+                pincel.lineTo(x+30, y+10);
+                pincel.lineTo(x+40, y);
+                pincel.lineTo(x+60, y);
+                pincel.stroke();
+                x+=60;
+            }     
+        
+            x=0;
+            y+=20;
+        }
+  
+
+    }
+    //setInterval(dibujarY, 1000, 0, 0);
+    dibujarY(0, 0 );
+    dibujarX(0, 0);
+
+
+</script>

@@ -1,0 +1,24 @@
+<canvas width="600" height="400" id="canvas"></canvas>
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function exibirAlerta(evento){
+        var x = evento.clientX - pantalla.offsetLeft;
+        var y = evento.clientY - pantalla.offsetTop;
+        alert( + x + ", " + y);
+    }
+
+    function pintar(evento){
+        var x = evento.clientX - pantalla.offsetLeft;
+        var y = evento.clientY - pantalla.offsetTop;
+        pincel.fillStyle = "red";
+        pincel.fillRect(x, y, 10, 10);
+        console.log(x + ", " + y);
+    }
+
+    pantalla.addEventListener("click", pintar);
+</script>
